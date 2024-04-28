@@ -3,10 +3,13 @@ import React from 'react';
 import Poem from './Poem';
 
 const Album = (props) => {
-	const poemList = props.value;
+	const author = props.value.author;
+	const album = props.value.album;
+	const poemList = props.value.poems;
 
 	return (
 		<div>
+			<h3>Album: {album.name}</h3>
 			{poemList.map((poemList) => (
 				<Poem value={poemList} key={poemList.id} />
 			))}
@@ -16,7 +19,7 @@ const Album = (props) => {
 					justifyContent: 'end',
 				}}
 			>
-				Author: Aboba
+				Author: {author.pseudonym}
 			</h3>
 			<h2
 				style={{
@@ -24,10 +27,10 @@ const Album = (props) => {
 					justifyContent: 'end',
 				}}
 			>
-				<i>Date: Aboba</i>
+				<i>Date: in progress</i>
 			</h2>
-		</div>
+		</div> //TODO Date upgrade
 	);
 };
 
-export default Album;
+export { Album };
