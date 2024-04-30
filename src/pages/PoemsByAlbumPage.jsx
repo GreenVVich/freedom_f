@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { getAlbum } from '../api';
 import { AddPoem, Album } from '../components';
+import { useParams } from 'react-router-dom';
 
-const PoemsByAlbum = (props) => {
+const PoemsByAlbum = () => {
+	const album_id = useParams().id;
+
 	const [albumData, setAlbumData] = useState();
 
 	const [author, setAuthor] = useState();
 	const [album, setAlbum] = useState();
 	const [poems, setPoems] = useState();
-	const album_id = props.value;
 
 	useEffect(() => {
 		getAlbum(album_id).then((data) => {
@@ -29,7 +31,7 @@ const PoemsByAlbum = (props) => {
 			{!!author ? (
 				<Album value={{ author: author, album: album, poems: poems }} />
 			) : (
-				<div>Погоди</div> // TODO Loading
+				<h1>Идёт загрузка, либо данного произведения ещё нет</h1> // TODO Loading, 404 error with redirect
 			)}
 		</div>
 	);

@@ -1,19 +1,13 @@
 import React from 'react';
-import Layout from 'antd/es/layout/layout';
 
-import PoemsByAlbum from './pages/PoemsByAlbum';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './pages/AppRoutes';
 
 function App() {
 	return (
-		<Layout
-			style={{
-				width: '99%',
-				justifyContent: 'center',
-				backgroundColor: 'ghostwhite',
-			}}
-		>
-			<PoemsByAlbum value={1} />
-		</Layout>
+		<BrowserRouter>
+			<AppRoutes />
+		</BrowserRouter>
 	);
 }
 

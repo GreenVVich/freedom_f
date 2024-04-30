@@ -1,4 +1,4 @@
-import { getAlbum } from './lyrics/GetRequests';
+import { getAlbum, getWelcome } from './lyrics/GetRequests';
 import { postPoem } from './lyrics/PostRequests';
 
-export { getAlbum, postPoem };
+export { getAlbum, getWelcome, postPoem };

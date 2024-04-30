@@ -9,26 +9,26 @@ const Album = (props) => {
 
 	return (
 		<div>
-			<h3>Album: {album.name}</h3>
+			<h2>Album: {album.name}</h2>
 			{poemList.map((poemList) => (
 				<Poem value={poemList} key={poemList.id} />
 			))}
-			<h3
-				style={{
-					display: 'flex',
-					justifyContent: 'end',
-				}}
-			>
-				Author: {author.pseudonym}
-			</h3>
 			<h2
 				style={{
 					display: 'flex',
 					justifyContent: 'end',
 				}}
 			>
-				<i>Date: in progress</i>
+				Author: {author.pseudonym}
 			</h2>
+			<h3
+				style={{
+					display: 'flex',
+					justifyContent: 'end',
+				}}
+			>
+				<i>Date: in progress</i>
+			</h3>
 		</div> //TODO Date upgrade
 	);
 };
