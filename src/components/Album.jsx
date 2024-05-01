@@ -1,26 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Typography } from 'antd';
 
 import Poem from './Poem';
 
 const Album = (props) => {
+	const { Title, Paragraph } = Typography;
+
 	const author = props.value.author;
 	const album = props.value.album;
-	const poemList = props.value.poems;
+	const poems = props.value.poems;
 
 	return (
-		<div>
+		<Paragraph>
 			<h2>Album: {album.name}</h2>
-			{poemList.map((poemList) => (
+			{poems.map((poemList) => (
 				<Poem value={poemList} key={poemList.id} />
 			))}
-			<h2
+			<Link
+				to={'/authors/' + author.id}
 				style={{
+					color: 'black',
 					display: 'flex',
 					justifyContent: 'end',
 				}}
 			>
-				Author: {author.pseudonym}
-			</h2>
+				<Title>Author: {author.pseudonym} </Title>
+			</Link>
 			<h3
 				style={{
 					display: 'flex',
@@ -29,7 +35,7 @@ const Album = (props) => {
 			>
 				<i>Date: in progress</i>
 			</h3>
-		</div> //TODO Date upgrade
+		</Paragraph> //TODO Date upgrade
 	);
 };
 
