@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { getWelcome } from '../api';
-import { AlbumsByAuthors } from '../components/AlbumsByAuthors';
+import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
 
 const WelcomePage = () => {
 	const [data, setData] = useState();
@@ -16,7 +16,11 @@ const WelcomePage = () => {
 	return (
 		<div>
 			<h1>Welcome!</h1>
-			{!!data ? <AlbumsByAuthors value={data} /> : <h1>Идёт загрузка</h1>}
+			{!!data ? (
+				<CollectionsByAuthors value={data} />
+			) : (
+				<h1>Идёт загрузка</h1>
+			)}
 		</div>
 	);
 };

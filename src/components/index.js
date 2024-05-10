@@ -1,4 +1,4 @@
 import { AddPoem } from './AddPoem';
-import { Album } from './Album';
+import { Collection } from './Collection';
 
-export { AddPoem, Album };
+export { AddPoem, Collection };

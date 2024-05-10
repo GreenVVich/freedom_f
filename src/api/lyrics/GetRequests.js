@@ -9,10 +9,10 @@ export const getWelcome = async () => {
 	}
 };
 
-export const getAlbum = async (album_id) => {
+export const getCollection = async (collection_id) => {
 	try {
 		const response = await axios.get(
-			`http://192.168.1.116:8000/lyrics/albums/${album_id}`
+			`http://192.168.1.116:8000/lyrics/collections/${collection_id}`
 		);
 		return response.data;
 	} catch (err) {
