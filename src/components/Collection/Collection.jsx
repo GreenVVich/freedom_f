@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography } from 'antd';
 
-import { dateServerToLocalFormat } from '../ulitls/dateFormat';
-import Poem from './Poem';
+import { dateServerToLocalFormat } from '../../ulitls/dateFormat';
+import { Poem } from '../Poem';
 
 const Collection = (props) => {
 	const { Paragraph } = Typography;

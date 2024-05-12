@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CollectionsByAuthor } from './CollectionsByAuthor';
+import { CollectionsByAuthor } from '../CollectionsByAuthor';
 
 const CollectionsByAuthors = (props) => {
 	const dataArray = props.value;

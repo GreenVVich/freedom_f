@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Input, DatePicker } from 'antd';
 import locale from 'antd/es/date-picker/locale/ru_RU';
 
-import { postPoem } from '../api';
+import { postPoem } from '../../api';
 
 const AddPoem = (props) => {
 	const { TextArea } = Input;
@@ -42,6 +42,8 @@ const AddPoem = (props) => {
 		});
 	};
 
+	const disabler = !name || !content ? true : false;
+
 	return (
 		<div>
 			<Input
@@ -68,7 +70,9 @@ const AddPoem = (props) => {
 				onChange={(data) => setDate(data)}
 				locale={locale}
 			/>
-			<Button onClick={sendPoem}>Добавить</Button>
+			<Button onClick={sendPoem} disabled={disabler}>
+				Добавить
+			</Button>
 		</div>
 	);
 };

@@ -26,4 +26,4 @@ const Poem = (props) => {
 	);
 };
 
-export default Poem;
+export { Poem };
