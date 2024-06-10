@@ -17,13 +17,9 @@ const Collection = (props) => {
 	return (
 		<Paragraph>
 			<h2>Collection: {collection.name}</h2>
-			{poems.map((poemProps) =>
-				!poemProps.deleted ? (
-					<Poem value={poemProps} key={poemProps.id} />
-				) : (
-					''
-				)
-			)}
+			{poems.map((poemProps) => (
+				<Poem value={poemProps} key={poemProps.id} />
+			))}
 			<div
 				style={{
 					display: 'flex',

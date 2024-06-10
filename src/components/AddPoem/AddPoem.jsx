@@ -33,7 +33,7 @@ const AddPoem = (props) => {
 			collection_id: props.value.collection_id,
 			name: name,
 			content: content,
-			create_date: !!create_date ? create_date.format() : null,
+			create_date: !!create_date ? create_date.format() : NaN,
 		}).then((return_data) => {
 			setData(return_data);
 			setName('');
