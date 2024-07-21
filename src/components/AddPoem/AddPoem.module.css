@@ -1,0 +1,5 @@
+.Sender {
+	margin: 1rem;
+	color: var(--text);
+	background-color: var(--background-color);
+}

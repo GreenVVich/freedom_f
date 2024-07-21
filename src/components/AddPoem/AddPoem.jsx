@@ -3,6 +3,7 @@ import { Button, Input, DatePicker } from 'antd';
 import locale from 'antd/es/date-picker/locale/ru_RU';
 
 import { postPoem } from '../../api';
+import classes from './AddPoem.module.css';
 
 const AddPoem = (props) => {
 	const { TextArea } = Input;
@@ -45,7 +46,7 @@ const AddPoem = (props) => {
 	const disabler = !name || !content ? true : false;
 
 	return (
-		<div>
+		<div className={classes.FullBlock}>
 			<Input
 				placeholder='Введите название'
 				value={name}
@@ -70,7 +71,11 @@ const AddPoem = (props) => {
 				onChange={(data) => setDate(data)}
 				locale={locale}
 			/>
-			<Button onClick={sendPoem} disabled={disabler}>
+			<Button
+				onClick={sendPoem}
+				disabled={disabler}
+				className={classes.Sender}
+			>
 				Добавить
 			</Button>
 		</div>

@@ -1,20 +1,15 @@
 import React from 'react';
 import { Typography, Divider } from 'antd';
 
-import './Poem.modal.css';
+import classes from './Poem.module.css';
 
 const Poem = (props) => {
 	return (
-		<Typography className='PoemBlock'>
-			<Divider
-				style={{
-					fontFamily: 'inherit',
-					fontSize: 'x-large',
-				}}
-			>
-				{props.value.name}
+		<Typography className={classes.PoemBlock}>
+			<Divider>
+				<span className={classes.PoemDivider}>{props.value.name}</span>
 			</Divider>
-			<div className='PoemContent'>{props.value.content}</div>
+			<div className={classes.PoemContent}>{props.value.content}</div>
 			<Divider />
 		</Typography>
 	);

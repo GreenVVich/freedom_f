@@ -2,20 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Divider } from 'antd';
 
+import classes from './CollectionsByAuthor.module.css';
+
 const CollectionsByAuthor = (props) => {
 	const { Paragraph } = Typography;
 	const author = props.author;
 	const collections = props.collections;
 
 	return (
-		<Typography key={author.id}>
+		<div key={author.id}>
 			<Link
 				to={'/authors/' + author.id}
-				style={{ color: 'black', fontSize: 'xx-large' }}
+				className={classes.AuthorPseudonym}
 			>
 				Author: {author.pseudonym}
 			</Link>
-			<div>{author.info}</div>
+			<div className={classes.AuthorInfo}>{author.info}</div>
 			<Paragraph>
 				{collections.map((collection) => (
 					<div key={collection.id}>
@@ -33,7 +35,7 @@ const CollectionsByAuthor = (props) => {
 				<br />
 			</Paragraph>
 			<Divider />
-		</Typography>
+		</div>
 	);
 };
 

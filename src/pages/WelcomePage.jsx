@@ -2,20 +2,33 @@ import React, { useEffect, useState } from 'react';
 
 import { getWelcome } from '../api';
 import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
+import { useSetTheme, useChangeTheme } from '../hooks';
 
 const WelcomePage = () => {
-	const [data, setData] = useState();
-
 	useEffect(() => {
 		document.title = 'Welcome!';
 	});
 
+	const [data, setData] = useState();
+
 	useEffect(() => {
 		getWelcome().then((info) => setData(info));
 	}, []);
+
+	useSetTheme();
+
+	const { theme, setTheme } = useChangeTheme();
+
+	const ChangeTheme = () => {
+		const new_theme = theme === 'dark' ? 'light' : 'dark';
+		setTheme(new_theme);
+	};
+
 	return (
 		<div>
-			<h1>Welcome!</h1>
+			<button onClick={ChangeTheme}>Change theme!</button>
+			<h1 style={{ color: 'var(--text)' }}>Welcome!</h1>
+
 			{!!data ? (
 				<CollectionsByAuthors value={data} />
 			) : (

@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import { getAuthor } from '../api';
 import { CollectionsByAuthor } from '../components/CollectionsByAuthor';
+import { useSetTheme } from '../hooks/useSetTheme';
 
 const AuthorPage = () => {
-	const author_id = useParams().id;
-
 	const [data, setData] = useState();
+	const author_id = useParams().id;
 
 	useEffect(() => {
 		getAuthor(author_id).then((info) => {
@@ -16,6 +16,9 @@ const AuthorPage = () => {
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useSetTheme();
+
 	return (
 		<div>
 			{!!data ? (
