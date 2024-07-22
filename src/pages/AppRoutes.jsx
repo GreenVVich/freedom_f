@@ -9,13 +9,9 @@ import WelcomePage from './WelcomePage';
 export const AppRoutes = () => {
 	return (
 		<Routes>
-			<Route path='/test' exact element={<TestPage />} />
-			<Route
-				path='/collections/:id'
-				exact
-				element={<PoemsByCollection />}
-			/>
-			<Route path='/authors/:id' exact element={<AuthorPage />} />
+			<Route path='/test' element={<TestPage />} />
+			<Route path='/collections/:id' element={<PoemsByCollection />} />
+			<Route path='/authors/:id' element={<AuthorPage />} />
 			<Route path='/*' element={<WelcomePage />} />
 		</Routes>
 	);

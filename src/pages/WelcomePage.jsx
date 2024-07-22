@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { getWelcome } from '../api';
 import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
-import { useSetTheme, useChangeTheme } from '../hooks';
+import { useChangeTheme } from '../hooks';
 
 const WelcomePage = () => {
 	useEffect(() => {
@@ -14,8 +14,6 @@ const WelcomePage = () => {
 	useEffect(() => {
 		getWelcome().then((info) => setData(info));
 	}, []);
-
-	useSetTheme();
 
 	const { theme, setTheme } = useChangeTheme();
 

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import { getCollection } from '../api';
 import { AddPoem, Collection } from '../components';
-import { useSetTheme } from '../hooks';
 
 const PoemsByCollection = () => {
 	const collection_id = useParams().id;
@@ -20,8 +19,6 @@ const PoemsByCollection = () => {
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	useSetTheme();
 
 	return (
 		<div>

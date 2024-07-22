@@ -1,6 +1,5 @@
 html[selected_theme='light'] {
 	--background-color: #f0f0f0;
-	/* --text: #333333; */
 	--text: #3cdb36;
 }
 
