@@ -31,6 +31,7 @@ const AddPoem = (props) => {
 
 	const sendPoem = () => {
 		postPoem({
+			author_id: props.value.author_id,
 			collection_id: props.value.collection_id,
 			name: name,
 			content: content,
