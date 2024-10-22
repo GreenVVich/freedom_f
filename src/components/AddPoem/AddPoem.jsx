@@ -49,6 +49,7 @@ const AddPoem = (props) => {
 	return (
 		<div className={classes.FullBlock}>
 			<Input
+				className={classes.InputText}
 				placeholder='Введите название'
 				value={name}
 				onChange={(event) => {
@@ -56,6 +57,7 @@ const AddPoem = (props) => {
 				}}
 			/>
 			<TextArea
+				className={classes.InputText}
 				autoSize
 				type='text'
 				placeholder='Введите содержимое'
@@ -65,6 +67,7 @@ const AddPoem = (props) => {
 				}}
 			/>
 			<DatePicker
+				className={classes.InputText}
 				value={create_date || null}
 				format={{
 					format: 'DD-MMMM-YYYY HH:mm',

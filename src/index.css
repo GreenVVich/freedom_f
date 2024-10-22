@@ -1,11 +1,13 @@
 html[selected_theme='light'] {
-	--background-color: #f0f0f0;
-	--text: #3cdb36;
+	--background-color: #888171;
+	--text: #01061d;
+	--shadow-color: #5ac2cd1a;
 }
 
 html[selected_theme='dark'] {
 	--background-color: #01061d;
 	--text: #888171;
+	--shadow-color: #5a66cd29;
 }
 
 body {
