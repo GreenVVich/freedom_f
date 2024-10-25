@@ -25,7 +25,7 @@ const PoemsByCollection = () => {
 			<AddPoem
 				value={{
 					poems: [poems, setPoems],
-					collection_id: collection_id,
+					collection_id: +collection_id,
 					author_id: !!collectionData
 						? collectionData.author.id
 						: null,
