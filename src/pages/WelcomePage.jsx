@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { getWelcome } from '../api';
 import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
@@ -8,6 +9,12 @@ const WelcomePage = () => {
 	useEffect(() => {
 		document.title = 'Welcome!';
 	});
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		navigate('/');
+	}, [navigate]);
 
 	const [data, setData] = useState();
 
