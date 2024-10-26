@@ -1,0 +1,20 @@
+.DividerText {
+	font-size: x-large;
+	color: var(--text);
+	margin: 0 16px;
+}
+
+.Divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 16px 0;
+	width: 100%;
+}
+
+.Divider:before,
+.Divider:after {
+	content: '';
+	flex: 1;
+	border-bottom: 2px solid var(--shadow-color);
+}
