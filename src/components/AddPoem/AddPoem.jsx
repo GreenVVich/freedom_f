@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Input, DatePicker } from 'antd';
+import { DatePicker } from 'antd';
 import locale from 'antd/es/date-picker/locale/ru_RU';
 
 import { postPoem } from '../../api';
 import classes from './AddPoem.module.css';
 
 const AddPoem = (props) => {
-	const { TextArea } = Input;
-
 	const [poems, setPoems] = props.value.poems;
 	const [data, setData] = useState();
 
@@ -48,17 +46,16 @@ const AddPoem = (props) => {
 
 	return (
 		<div className={classes.FullBlock}>
-			<Input
-				className={classes.InputText}
+			<input
+				className={classes.InputPoemName}
 				placeholder='Введите название'
 				value={name}
 				onChange={(event) => {
 					setName(event.target.value);
 				}}
 			/>
-			<TextArea
-				className={classes.InputText}
-				autoSize
+			<textarea
+				className={classes.InputPoemContent}
 				type='text'
 				placeholder='Введите содержимое'
 				value={content}
@@ -75,13 +72,13 @@ const AddPoem = (props) => {
 				onChange={(data) => setDate(data)}
 				locale={locale}
 			/>
-			<Button
+			<button
 				onClick={sendPoem}
 				disabled={disabler}
-				className={classes.Sender}
+				className={classes.SendButton}
 			>
 				Добавить
-			</Button>
+			</button>
 		</div>
 	);
 };

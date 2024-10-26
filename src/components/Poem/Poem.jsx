@@ -1,17 +1,15 @@
 import React from 'react';
-import { Typography, Divider } from 'antd';
 
 import classes from './Poem.module.css';
+import { Divider } from '../../UI';
 
 const Poem = (props) => {
 	return (
-		<Typography className={classes.PoemBlock}>
-			<Divider>
-				<span className={classes.PoemDivider}>{props.value.name}</span>
-			</Divider>
+		<div className={classes.PoemBlock}>
+			<Divider content={props.value.name} />
 			<div className={classes.PoemContent}>{props.value.content}</div>
 			<Divider />
-		</Typography>
+		</div>
 	);
 };
 

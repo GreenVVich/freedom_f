@@ -15,8 +15,3 @@
 	width: max-content;
 	white-space: pre-line;
 }
-
-.PoemDivider {
-	font-size: x-large;
-	color: var(--text);
-}
