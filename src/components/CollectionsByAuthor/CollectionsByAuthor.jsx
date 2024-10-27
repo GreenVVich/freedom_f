@@ -1,39 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Typography, Divider } from 'antd';
 
 import classes from './CollectionsByAuthor.module.css';
+import { Divider } from '../../UI';
 
 const CollectionsByAuthor = (props) => {
-	const { Paragraph } = Typography;
 	const author = props.author;
 	const collections = props.collections;
 
 	return (
-		<div key={author.id}>
+		<div key={author.id} className={classes.AuthorBlock}>
 			<Link
 				to={'/authors/' + author.id}
-				className={classes.AuthorPseudonym}
+				className={classes.TitleAuthorPseudonym}
 			>
 				Author: {author.pseudonym}
 			</Link>
 			<div className={classes.AuthorInfo}>{author.info}</div>
-			<Paragraph>
+			<div>
 				{collections.map((collection) => (
-					<div key={collection.id}>
+					<div
+						key={collection.id}
+						className={classes.CollectionBlock}
+					>
 						<Link
 							to={'/collections/' + collection.id}
 							key={collection.id}
-							style={{ color: 'black', fontSize: 'x-large' }}
+							className={classes.CollectionLink}
 						>
 							{collection.name}
 						</Link>
-						<div>{collection.description}</div>
+						<div className={classes.CollectionInfo}>
+							{collection.description}
+						</div>
 						<br />
 					</div>
 				))}
 				<br />
-			</Paragraph>
+			</div>
 			<Divider />
 		</div>
 	);

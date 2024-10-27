@@ -1,4 +1,9 @@
-.AuthorPseudonym {
+.AuthorBlock {
+	color: var(--text);
+	font-size: x-large;
+}
+
+.TitleAuthorPseudonym {
 	color: var(--text);
 	font-size: xx-large;
 	text-decoration: none;
@@ -10,7 +15,18 @@
 	font-size: x-large;
 }
 
-.CollectionName {
+.CollectionBlock {
+	color: var(--text);
+	font-size: x-large;
+}
+
+.CollectionLink,
+.CollectionLink:visited {
+	color: var(--text);
+	font-size: x-large;
+}
+
+.CollectionInfo {
 	color: var(--text);
 	font-size: x-large;
 }

@@ -1,0 +1,25 @@
+.CollectionTitle {
+	color: var(--text);
+	font-size: x-large;
+}
+
+.InfoBlock {
+	display: flex;
+	justify-content: end;
+	flex-basis: content;
+	flex-direction: column;
+	align-items: end;
+}
+
+.AuthorLink,
+.AuthorLink:visited {
+	color: var(--text);
+	font-size: x-large;
+	margin: 8px;
+}
+
+.DateInfo {
+	margin: 8px;
+	color: var(--text);
+	font-size: x-large;
+}
