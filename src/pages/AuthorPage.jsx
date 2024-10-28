@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getAuthor } from '../api';
-import { CollectionsByAuthor } from '../components/CollectionsByAuthor';
+import { Header, CollectionsByAuthor } from '../components';
 
 const AuthorPage = () => {
 	const [data, setData] = useState();
@@ -18,6 +18,7 @@ const AuthorPage = () => {
 
 	return (
 		<div>
+			<Header />
 			{!!data ? (
 				<CollectionsByAuthor
 					author={data.author}

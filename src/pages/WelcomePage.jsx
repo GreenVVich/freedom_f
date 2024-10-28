@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { getWelcome } from '../api';
 import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
-import { useChangeTheme } from '../hooks';
+import { Header } from '../components/Header';
 
 const WelcomePage = () => {
 	useEffect(() => {
@@ -22,16 +22,9 @@ const WelcomePage = () => {
 		getWelcome().then((info) => setData(info));
 	}, []);
 
-	const { theme, setTheme } = useChangeTheme();
-
-	const ChangeTheme = () => {
-		const new_theme = theme === 'dark' ? 'light' : 'dark';
-		setTheme(new_theme);
-	};
-
 	return (
 		<div>
-			<button onClick={ChangeTheme}>Change theme!</button>
+			<Header />
 			<h1 style={{ color: 'var(--text)' }}>Welcome!</h1>
 
 			{!!data ? (

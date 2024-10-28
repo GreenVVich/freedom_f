@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getCollection } from '../api';
-import { AddPoem, Collection } from '../components';
+import { Header, AddPoem, Collection } from '../components';
 
 const PoemsByCollection = () => {
 	const collection_id = useParams().id;
@@ -22,6 +22,7 @@ const PoemsByCollection = () => {
 
 	return (
 		<div>
+			<Header />
 			<AddPoem
 				value={{
 					poems: [poems, setPoems],
