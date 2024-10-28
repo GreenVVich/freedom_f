@@ -10,11 +10,12 @@ html[selected_theme='dark'] {
 	--background-color: #1e1e1e;
 	--text: #c0b350;
 	--shadow-color: rgba(255, 255, 255, 0.1);
-	--primary-color: #5ac2cd; /*TODO Fix colors bc dark theme primary must be not such contrast*/
-	--secondary-color: #d4c400;
+	--primary-color: rgba(90, 194, 205, 0.7);
+	--secondary-color: rgba(212, 196, 0, 0.6);
 }
 
 body {
+	margin: 0;
 	background-color: var(--background-color);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

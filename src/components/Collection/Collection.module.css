@@ -1,3 +1,7 @@
+.FullBlock {
+	padding: 8px;
+}
+
 .CollectionTitle {
 	color: var(--text);
 	font-size: x-large;

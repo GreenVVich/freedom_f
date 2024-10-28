@@ -13,7 +13,7 @@ const Collection = (props) => {
 	const date = dateServerToLocalFormat(collection.publish_date);
 
 	return (
-		<div>
+		<div className={classes.FullBlock}>
 			<div className={classes.CollectionTitle}>
 				Collection: {collection.name}
 			</div>
