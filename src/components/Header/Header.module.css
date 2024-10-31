@@ -11,14 +11,16 @@
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 }
-
-.LeftButton {
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
-	border: none;
+.LeftButton,
+.RightButton {
+	border-radius: 10px;
 	padding: 10px 15px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.LeftButton {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 .ButtonGroup {
@@ -29,15 +31,12 @@
 .RightButton {
 	background-color: var(--secondary-color);
 	color: var(--primary-color);
-	border: none;
-	padding: 10px 15px;
-	cursor: pointer;
-	transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .LeftButton:hover,
 .RightButton:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+	/* background-color: rgba(255, 255, 255, 0.3); */
+	background-color: rgb(73, 50, 50);
 }
 
 .LeftButton:active,

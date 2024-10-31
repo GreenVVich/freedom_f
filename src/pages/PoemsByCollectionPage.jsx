@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getCollection } from '../api';
 import { Header, AddPoem, Collection } from '../components';
+import { LoadingPlaceholder } from '../UI';
 
 const PoemsByCollection = () => {
 	const collection_id = useParams().id;
@@ -42,7 +43,7 @@ const PoemsByCollection = () => {
 					}}
 				/>
 			) : (
-				<div>Идёт загрузка, либо данного произведения ещё нет</div> // TODO Loading, 404 error with redirect
+				<LoadingPlaceholder />
 			)}
 		</div>
 	);

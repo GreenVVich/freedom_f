@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getAuthor } from '../api';
 import { Header, CollectionsByAuthor } from '../components';
+import { LoadingPlaceholder } from '../UI';
 
 const AuthorPage = () => {
 	const [data, setData] = useState();
@@ -25,7 +26,7 @@ const AuthorPage = () => {
 					collections={data.collections}
 				/>
 			) : (
-				<h1>Идёт загрузка, либо данного произведения ещё нет</h1> // TODO Loading, 404 error with redirect
+				<LoadingPlaceholder />
 			)}
 		</div>
 	);

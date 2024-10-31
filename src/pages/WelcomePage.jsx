@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { getWelcome } from '../api';
-import { CollectionsByAuthors } from '../components/CollectionsByAuthors';
-import { Header } from '../components/Header';
+import { CollectionsByAuthors, Header } from '../components';
+import { LoadingPlaceholder } from '../UI';
 
 const WelcomePage = () => {
 	useEffect(() => {
@@ -30,7 +30,7 @@ const WelcomePage = () => {
 			{!!data ? (
 				<CollectionsByAuthors value={data} />
 			) : (
-				<h1>Идёт загрузка</h1>
+				<LoadingPlaceholder />
 			)}
 		</div>
 	);
